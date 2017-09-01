@@ -1,7 +1,7 @@
 name:                melancholia
 version:             0.1.0.0
--- synopsis:
--- description:
+synopsis:            Melancholic inverted DAG scheduler
+description:         
 homepage:            https://github.com/githubuser/melancholia#readme
 license:             BSD3
 license-file:        LICENSE
