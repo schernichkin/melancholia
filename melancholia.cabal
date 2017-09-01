@@ -1,7 +1,22 @@
 name:                melancholia
 version:             0.1.0.0
 synopsis:            Melancholic inverted DAG scheduler
-description:         
+description:         Schedule tasks among hosts with limited capacities.
+                     Dependencies are represented as inverted DAG. E.g. if
+                     task A is using result of task B the dependency will 
+                     point from B to A. Still B will be sheduled before A.
+                     It designed for "push" systems (as oppose to "demand"
+                     systems) where producer pushes data to consumer. If B can
+                     not be sheduled due to capacity limitations, Melancholia
+                     will ask to install message sink (special low-capacity task
+                     which can spill messages to disk to resend it later).
+                     Melancholia will attempt to minimize disk spills.
+                     .
+                     Melancholia also support dynamic resource allocation via
+                     increasing or decresing ressource pressure. In return it
+                     may allow resource allocation, ask task to suspend or even
+                     ask to move task to another host. Decisions based on
+                     cost model.
 homepage:            https://github.com/githubuser/melancholia#readme
 license:             BSD3
 license-file:        LICENSE
